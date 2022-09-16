@@ -23,16 +23,20 @@ This project is a task from **Practical Test Automation** book
 
 **(1)** The purpose of this class is to take as input a multiline string and return back each line of the string being suffixed with its corresponding line number. 
 \
+\
 **For example**, if you have the string:\
 This is a multi-line\
 string. This is second line\
 And this is third line
 \
+\
 **the class should return back this:**
+\
 \
 1This is a multi-line\
 2string. This is second line\
 3And this is third line
+\
 \
 **(2)** Besides this main functionality, the class should allow for some kind of
 configuration. **For example**, you want to tell that each number should be
@@ -44,6 +48,7 @@ something like this:
 2.string. This is second line\
 3.And this is third line
 \
+\
 **(3)**	Or you may say that the line numbering should start from 8, not 1. In that case,
 the output should be something like this:
 \
@@ -51,7 +56,8 @@ the output should be something like this:
 8This is a multi-line\
 9string. This is second line\
 10And this is third line
-
+\
+\
 **(4)**  You may also say that you want each number to be padded with 0s or other
 character sequence. **For example**, assuming that you want the numbers to be
 padded with zeros, the input is:
@@ -85,6 +91,7 @@ And this is the eleventh line
 10And this is the tenth line\
 11And this is the eleventh line
 \
+\
 **(5)**	However, when the number of lines does not justify padding, then padding will
 not be used even if specified. Hence, if you specify that you want padding with
 0s but the input is less than ten lines long, then no padding will take place. In
@@ -99,6 +106,7 @@ is **output** as:\
 1line 1\
 2line 2
 \
+\
 **(6)** You may also ask the class to prefix each line with a prefix string. Assume that
 you have the following input and the prefix you want to attach to each line is '#':
 \
@@ -107,7 +115,8 @@ line 1\
 line 2
 \
 \
-Then the **output** will be\
+Then the **output** will be
+\
 \
 #1line1\
 #2line2
