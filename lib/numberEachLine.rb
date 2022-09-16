@@ -1,10 +1,11 @@
 class NumberEachLine
 
-    attr_reader :start, :prefixes
+    attr_reader :start, :prefixes, :suffixes
 
     def initialize()
         @start = 1
         @prefixes = []
+        @suffixes = []
         @padding = ''
     end
 
@@ -13,7 +14,7 @@ class NumberEachLine
         # for adding nums and padding (if exists)
         arr_of_numbered_lines = generate_arr_of_numbered_lines(arr_of_lines)
         # for adding prefixes
-        str_of_numbered_lines = add_prefixes(arr_of_numbered_lines)
+        str_of_numbered_prefixed_lines = add_prefixes(arr_of_numbered_lines)
     end
 
     def start_with(num)
@@ -23,9 +24,8 @@ class NumberEachLine
     def pad_with(value)
         @padding = value
     end
-
+#
     private
-
     def add_prefixes(arr_of_numbered_lines)
         if prefixes.empty?
             return join_arr_of_numbered_lines(arr_of_numbered_lines)
@@ -34,10 +34,9 @@ class NumberEachLine
         prefixes_str = @prefixes.join('')
 
         result_arr = []
-        @prefixes.each do |prefix|
-            arr_of_numbered_lines.each do |numberedLine|
-                result_arr << prefixes_str + numberedLine
-            end
+
+        arr_of_numbered_lines.each do |numberedLine|
+            result_arr << prefixes_str + numberedLine
         end
 
         result_str_of_numbered_lines = join_arr_of_numbered_lines(result_arr)
@@ -54,8 +53,10 @@ class NumberEachLine
         last_num = @start + arr_of_lines.length - 1
 
         (@start..last_num).each do |i|
-
+            # adding padding
             i = add_padding(i, last_num)
+            # adding suffixes
+            i = add_suffixes(i)
             result_lines << (i + arr_of_lines[index])
 
             index += 1
@@ -77,6 +78,14 @@ class NumberEachLine
         "#{i}"
     end
 
+    def add_suffixes(i)
+        if !@suffixes.empty?
+            suffixes_str = @suffixes.join("")
+            i += suffixes_str
+        end
+
+        i
+    end
 
     def join_arr_of_numbered_lines(arr_of_numbered_lines)
         str_of_numbered_lines = arr_of_numbered_lines.join("\n")
