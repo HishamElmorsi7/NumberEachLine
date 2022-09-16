@@ -51,16 +51,13 @@ describe NumberEachLine do
 
         end
 
-        context "when each line needs to be padded with a 0 " do
+        context "and needs to be padded with a 0." do
 
-            it  'prefixes each line with a increasing (line numbers, space) and padded with 0' do
+            it  'Then prefixes each line with a increasing (line numbers, space) and padded with 0' do
 
                 numberEachLine.pad_with('0')
 
-                expect(numberEachLine.numberEachLine(str_value).to eq(' 1This is the first line
-                 2and that is the second line
-                 3hi! that is the third one'
-                ))
+                expect(numberEachLine.numberEachLine(str_value)).to eq(" 1This is the first line\n 2and that is the second line\n 3hi! that is the third one")
             end
         end
 
@@ -70,9 +67,9 @@ describe NumberEachLine do
 
         before { numberEachLine.prefixes << '#'}
         it 'prefixes each line with a # symbol before number' do
-            expect(numberEachLine.numberEachLine(str_value).to eq('#1This is the first line
+            expect(numberEachLine.numberEachLine(str_value)).to eq('#1This is the first line
             #2and that is the second line
-            #3hi! that is the third one'))
+            #3hi! that is the third one')
         end
     end
 
@@ -81,9 +78,9 @@ describe NumberEachLine do
 
         it 'sufixes each line with a blank after number which increase per line by one' do
 
-            expect(numberEachLine.numberEachLine(str_value).to eq('1 This is the first line
+            expect(numberEachLine.numberEachLine(str_value)).to eq('1 This is the first line
             2 and that is the second line
-            3 hi! that is the third one'))
+            3 hi! that is the third one')
         end
     end
 
@@ -99,7 +96,7 @@ describe NumberEachLine do
         end
 
         context "when it is configured to be prefixed with 'x' and padded with '*' " do
-            before do 
+            before do
                 numberEachLine.prefixes << 'x'
                 numberEachLine.pad_with('*')
             end
