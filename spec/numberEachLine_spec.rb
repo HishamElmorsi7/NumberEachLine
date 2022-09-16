@@ -47,9 +47,7 @@ describe NumberEachLine do
 
         it 'prefixes each line with a blank before number' do
 
-            expect(numberEachLine.numberLines(str_value).to eq(' 1This is the first line
-             2and that is the second line
-             3hi! that is the third one'))
+            expect(numberEachLine.numberEachLine(str_value)).to eq(" 1This is the first line\n 2and that is the second line\n 3hi! that is the third one")
 
         end
 
@@ -59,7 +57,7 @@ describe NumberEachLine do
 
                 numberEachLine.pad_with('0')
 
-                expect(numberEachLine.numberLines(str_value).to eq(' 1This is the first line
+                expect(numberEachLine.numberEachLine(str_value).to eq(' 1This is the first line
                  2and that is the second line
                  3hi! that is the third one'
                 ))
@@ -72,7 +70,7 @@ describe NumberEachLine do
 
         before { numberEachLine.prefixes << '#'}
         it 'prefixes each line with a # symbol before number' do
-            expect(numberEachLine.numberLines(str_value).to eq('#1This is the first line
+            expect(numberEachLine.numberEachLine(str_value).to eq('#1This is the first line
             #2and that is the second line
             #3hi! that is the third one'))
         end
@@ -83,7 +81,7 @@ describe NumberEachLine do
 
         it 'sufixes each line with a blank after number which increase per line by one' do
 
-            expect(numberEachLine.numberLines(str_value).to eq('1 This is the first line
+            expect(numberEachLine.numberEachLine(str_value).to eq('1 This is the first line
             2 and that is the second line
             3 hi! that is the third one'))
         end
@@ -94,7 +92,7 @@ describe NumberEachLine do
 
         it 'sufixes each line with a # symbol after number which increase per line by one' do
 
-            expect(numberEachLine.numberLines(str_value).to eq('1#This is the first line
+            expect(numberEachLine.numberEachLine(str_value).to eq('1#This is the first line
             2#and that is the second line
             3#hi! that is the third one'))
 
@@ -107,7 +105,7 @@ describe NumberEachLine do
             end
 
             it "prefixes each line with increasing numbers and 'x' and padded with '#'" do
-                expect(numberEachLine.numberLines(str_value).to eq('x1#This is the first line
+                expect(numberEachLine.numberEachLine(str_value).to eq('x1#This is the first line
                 x2#and that is the second line
                 x3#hi! that is the third one'))
             end
@@ -143,7 +141,7 @@ describe NumberEachLine do
             10hello
             11hello this is the last line
             '
-            expect(numberEachLine.numberLines(value)).to eq(expected_result_value)
+            expect(numberEachLine.numberEachLine(value)).to eq(expected_result_value)
         end
 
         context "when number of lines is less than 10" do
@@ -151,7 +149,7 @@ describe NumberEachLine do
 
             it "doesn't pad, just count lines starting from 1 and increasing" do
 
-                expect(numberEachLine.numberLines(str_value).to eq('1This is the first line
+                expect(numberEachLine.numberEachLine(str_value).to eq('1This is the first line
                 2and that is the second line
                 3hi! that is the third one'))
             end
