@@ -20,24 +20,24 @@ This project is a task from **Practical Test Automation** book
 
 ## project requirements
 
-**(1)** The purpose of this class is to take as input a multiline string and return back each line of the string being suffixed with its corresponding line number. \
-
+**(1)** The purpose of this class is to take as input a multiline string and return back each line of the string being suffixed with its corresponding line number. 
+\
 **For example**, if you have the string:\
 This is a multi-line\
 string. This is second line\
-And this is third line\
-
-**the class should return back this:**\
-
+And this is third line
+\
+**the class should return back this:**
+\
 1This is a multi-line\
 2string. This is second line\
-3And this is third line\
+3And this is third line
 
 **(2)** Besides this main functionality, the class should allow for some kind of
 configuration. **For example**, you want to tell that each number should be
 suffixed with the string ". ". If you say that, then the returned string should be
-something like this:\
-
+something like this:
+\
 1.This is a multi-line\
 2.string. This is second line\
 3.And this is third line\
@@ -50,8 +50,8 @@ the output should be something like this:\
 
 **(4)**  You may also say that you want each number to be padded with 0s or other
 character sequence. **For example**, assuming that you want the numbers to be
-padded with zeros, the input is:\
-
+padded with zeros, the input is:
+\
 This is a multi-line\
 string. This is a second line\
 And this is the third line\
@@ -62,10 +62,10 @@ And this is the seventh line\
 And this is the eighth line\
 And this is the ninth line\
 And this is the tenth line\
-And this is the eleventh line\
-
-**the output** will be\
-
+And this is the eleventh line
+\
+**the output** will be
+\
 01This is a multi-line\
 02string. This is a second line\
 03And this is the third line\
